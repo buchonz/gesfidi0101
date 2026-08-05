@@ -1,409 +1,408 @@
 <!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESFIDI | Pasarela de Pagos para el Desarrollo Territorial</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GESFIDI - Innovación Financiera para el Desarrollo Territorial</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+    <!-- Tailwind Config & Custom CSS -->
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        "primary-fixed-dim": "#a4c8ff",
-                        "on-tertiary-fixed-variant": "#374951",
-                        "surface": "#f4faff",
-                        "tertiary-container": "#3c4e55",
-                        "on-secondary-fixed": "#001f24",
-                        "error-container": "#ffdad6",
-                        "secondary-container": "#69e8fe",
-                        "surface-tint": "#2560a1",
-                        "on-error-container": "#93000a",
-                        "on-error": "#ffffff",
-                        "primary-fixed": "#d4e3ff",
-                        "on-surface-variant": "#424750",
-                        "secondary": "#006876",
-                        "tertiary": "#25373e",
-                        "secondary-fixed": "#9eefff",
-                        "surface-bright": "#f4faff",
-                        "on-background": "#111d23",
-                        "inverse-surface": "#263238",
-                        "surface-dim": "#cfdce4",
-                        "surface-variant": "#d7e4ec",
-                        "on-primary-fixed-variant": "#004784",
-                        "on-primary-fixed": "#001c3a",
-                        "on-tertiary-container": "#abbfc7",
-                        "tertiary-fixed": "#d2e6ef",
-                        "on-secondary-fixed-variant": "#004e59",
-                        "surface-container-highest": "#d7e4ec",
-                        "secondary-fixed-dim": "#55d7ed",
-                        "on-tertiary-fixed": "#0b1e24",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary-container": "#90beff",
-                        "on-tertiary": "#ffffff",
-                        "on-secondary-container": "#006774",
-                        "outline": "#727781",
-                        "surface-container": "#e3f0f8",
-                        "primary-container": "#004c8c",
-                        "on-primary": "#ffffff",
-                        "inverse-primary": "#a4c8ff",
-                        "inverse-on-surface": "#e6f3fb",
-                        "outline-variant": "#c2c6d2",
-                        "surface-container-low": "#e9f6fd",
-                        "on-surface": "#111d23",
-                        "error": "#ba1a1a",
-                        "primary": "#003565",
-                        "background": "#f4faff",
-                        "surface-container-high": "#ddeaf2",
-                        "tertiary-fixed-dim": "#b6cad2",
-                        "on-secondary": "#ffffff"
+                        brand: {
+                            dark: '#0B132B',
+                            blue: '#1C2541',
+                            cyan: '#00A8E8',
+                            light: '#E5E7EB'
+                        }
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards'
                     },
-                    spacing: {
-                        "stack-sm": "8px",
-                        "margin-mobile": "16px",
-                        "stack-lg": "32px",
-                        "section-padding": "80px",
-                        "stack-md": "16px",
-                        "gutter": "24px",
-                        "container-max": "1200px"
-                    },
-                    fontFamily: {
-                        "display-lg-mobile": ["Manrope"],
-                        "headline-md": ["Manrope"],
-                        "headline-sm": ["Manrope"],
-                        "caption": ["Manrope"],
-                        "display-lg": ["Manrope"],
-                        "label-bold": ["Manrope"],
-                        "body-lg": ["Manrope"],
-                        "body-md": ["Manrope"]
-                    },
-                    fontSize: {
-                        "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "800" }],
-                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "700" }],
-                        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "700" }],
-                        "caption": ["12px", { lineHeight: "16px", fontWeight: "500" }],
-                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
-                        "label-bold": ["14px", { lineHeight: "20px", fontWeight: "700" }],
-                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
-                    },
-                    boxShadow: {
-                        'level-1': '0px 4px 20px rgba(0, 0, 0, 0.05)',
-                        'level-2': '0px 8px 30px rgba(0, 104, 118, 0.1)',
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
                     }
-                },
-            },
+                }
+            }
         }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .material-symbols-outlined.filled {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        .gradient-text {
+            background: linear-gradient(135deg, #00A8E8, #1C2541);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
-<!-- TopNavBar -->
-<header class="bg-surface dark:bg-on-background docked full-width top-0 sticky z-50 shadow-sm transition-all duration-300">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto py-4">
-<div class="flex items-center gap-3 cursor-pointer">
-<img alt="GESFIDI Logo" class="h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCixGNX_oOxk9wxCvyFQOzmJuZBotubW2YSKIqTZLikgZZqbB7Vivky73dz-hLE5SEdqcZ7LjkGLRCFdnYHhQpwarI3b4bS_Dw5jN4F5noZk31k9p5_Su-QiAij3-yD-H3MZummeTcKfTKDBNnqt8cqSvxO4UyKB16SqmdRpr45i1uQrDjair1unom5I49Bz7I9mWlm8TGWgC5NQImcwIoe-nooGJOtMV3JG8Hza0j1HoHRWXKiAh0m6QM4bHXCSjNCW6Y"/>
-</div>
-<!-- Desktop Nav -->
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Inicio</a>
-<a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary font-label-bold text-label-bold opacity-80 transition-opacity duration-200" href="#como-funciona">Cómo Funciona</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#transparencia">Transparencia</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#pago-express">Pago Express</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-label-bold text-label-bold hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#contacto">Contacto</a>
-</nav>
-<button class="hidden md:flex bg-secondary text-on-secondary font-label-bold text-label-bold px-6 py-2.5 rounded-lg hover:bg-[#005a67] transition-colors items-center gap-2">
-                Pagar Ahora
-            </button>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-primary p-2">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="w-full bg-surface-container-low pt-section-padding pb-section-padding px-margin-mobile md:px-gutter relative overflow-hidden">
-<!-- Abstract Background Shapes -->
-<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-surface-container-high/50 to-transparent -skew-x-12 translate-x-1/4 pointer-events-none"></div>
-<div class="max-w-container-max mx-auto grid grid-cols-1 gap-stack-lg items-center relative z-10">
-<div class="flex flex-col items-start gap-stack-md items-center text-center mx-auto">
-<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-primary">
-<span class="text-secondary">GESFIDI:</span> Innovación Financiera para el Desarrollo Territorial
-                </h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
-                    Automatiza y asegura tus liquidaciones de insumos esenciales con tecnología blockchain y USDT. Soluciones directas para las empresas de Santiago de Cuba.
-                </p>
-<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
-<button class="bg-secondary text-on-secondary font-label-bold text-label-bold px-8 py-4 rounded-lg hover:bg-[#005a67] transition-all shadow-md hover:shadow-lg w-full sm:w-auto text-center">
-                        INICIAR UNA ORDEN
-                    </button>
-<button class="bg-primary-container text-on-primary font-label-bold text-label-bold px-8 py-4 rounded-lg hover:bg-primary transition-all shadow-md hover:shadow-lg w-full sm:w-auto text-center">
-                        MÁS INFORMACIÓN
-                    </button>
-</div>
-</div>
-<!-- 3D Illustration Placeholder -->
-</div>
-</section>
-<!-- Cómo Funciona (Timeline) -->
-<section class="w-full bg-surface-container-lowest py-section-padding px-margin-mobile md:px-gutter" id="como-funciona">
-<div class="max-w-container-max mx-auto text-center">
-<h2 class="text-headline-md font-headline-md text-primary mb-stack-lg">Flujo de Transacción Simplificado</h2>
-<div class="flex flex-col md:flex-row justify-between items-center relative mt-12 gap-8 md:gap-0">
-<!-- Connector Line (Desktop) -->
-<div class="hidden md:block absolute top-[40px] left-[10%] right-[10%] h-[2px] bg-outline-variant z-0"></div>
-<!-- Step 1 -->
-<div class="relative z-10 flex flex-col items-center flex-1 max-w-[250px]">
-<div class="w-20 h-20 bg-surface-container flex items-center justify-center rounded-xl shadow-level-1 mb-4 border border-surface-variant">
-<span class="material-symbols-outlined text-4xl text-secondary filled">edit_document</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-1">GENERAR ORDEN</h3>
-<p class="text-caption font-caption text-on-surface-variant text-center">CUP/Datos Expediente</p>
-<p class="text-caption font-caption text-outline mt-2">El cliente inicia la solicitud.</p>
-</div>
-<!-- Step 2 -->
-<div class="relative z-10 flex flex-col items-center flex-1 max-w-[250px]">
-<div class="w-20 h-20 bg-surface-container flex items-center justify-center rounded-xl shadow-level-1 mb-4 border border-surface-variant">
-<span class="material-symbols-outlined text-4xl text-secondary filled">account_tree</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-1">PROCESO AUTOMÁTICO</h3>
-<p class="text-caption font-caption text-on-surface-variant text-center">Validación y Generación</p>
-<p class="text-caption font-caption text-outline mt-2">La lógica de backend maneja la orden.</p>
-</div>
-<!-- Step 3 -->
-<div class="relative z-10 flex flex-col items-center flex-1 max-w-[250px]">
-<div class="w-20 h-20 bg-surface-container flex items-center justify-center rounded-xl shadow-level-1 mb-4 border border-surface-variant">
-<span class="material-symbols-outlined text-4xl text-secondary filled">qr_code_scanner</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-1">PAGO EN USDT</h3>
-<p class="text-caption font-caption text-on-surface-variant text-center">BSC / BEP20</p>
-<p class="text-caption font-caption text-outline mt-2">El cliente realiza la transferencia.</p>
-</div>
-<!-- Step 4 -->
-<div class="relative z-10 flex flex-col items-center flex-1 max-w-[250px]">
-<div class="w-20 h-20 bg-surface-container flex items-center justify-center rounded-xl shadow-level-1 mb-4 border border-surface-variant">
-<span class="material-symbols-outlined text-4xl text-secondary filled">monetization_on</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-1">LIQUIDACIÓN SEGURA</h3>
-<p class="text-caption font-caption text-on-surface-variant text-center">QvaPay / Insumos</p>
-<p class="text-caption font-caption text-outline mt-2">Los fondos se liquidan para insumos.</p>
-</div>
-</div>
-<div class="mt-12">
-<a class="text-secondary font-label-bold text-label-bold underline hover:text-secondary-fixed-dim transition-colors" href="#">Ver Detalles Técnicos</a>
-</div>
-</div>
-</section>
-<!-- Módulo de Pago Express -->
-<!-- Beneficios Clave -->
-<section class="w-full bg-surface-container-lowest py-section-padding px-margin-mobile md:px-gutter" id="beneficios">
-<div class="max-w-container-max mx-auto text-center">
-<h2 class="text-headline-md font-headline-md text-primary mb-stack-lg">Beneficios Clave</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md mt-10">
-<!-- Card 1 -->
-<div class="bg-surface-container border border-surface-variant rounded-xl p-8 flex flex-col items-center text-center shadow-level-1 hover:shadow-level-2 transition-shadow duration-300">
-<div class="w-16 h-16 mb-6 text-secondary bg-surface-container-lowest rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-4xl">bolt</span>
-</div>
-<h3 class="text-headline-sm font-headline-sm text-on-background mb-3">Velocidad Blockchain</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Liquidaciones rápidas y eficientes usando la tecnología blockchain para reducir tiempos de espera.</p>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container border border-surface-variant rounded-xl p-8 flex flex-col items-center text-center shadow-level-1 hover:shadow-level-2 transition-shadow duration-300">
-<div class="w-16 h-16 mb-6 text-secondary bg-surface-container-lowest rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-4xl">shield</span>
-</div>
-<h3 class="text-headline-sm font-headline-sm text-on-background mb-3">Seguridad Avanzada</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Transacciones encriptadas y trazables que garantizan la integridad de cada pago realizado.</p>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container border border-surface-variant rounded-xl p-8 flex flex-col items-center text-center shadow-level-1 hover:shadow-level-2 transition-shadow duration-300">
-<div class="w-16 h-16 mb-6 text-secondary bg-surface-container-lowest rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-4xl">support_agent</span>
-</div>
-<h3 class="text-headline-sm font-headline-sm text-on-background mb-3">Soporte Local</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Asistencia directa y personalizada para las empresas ubicadas en Santiago de Cuba.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Impacto en el Desarrollo -->
-<section class="w-full bg-surface-container-low py-section-padding px-margin-mobile md:px-gutter" id="impacto">
-<div class="max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-stack-lg">
-<div class="flex-1 flex flex-col gap-stack-md">
-<p class="text-label-bold font-label-bold text-secondary uppercase tracking-widest">Impacto Territorial</p>
-<h2 class="text-headline-md font-headline-md text-primary">Impulsando el Desarrollo de Santiago de Cuba</h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant">
-                GESFIDI no es solo una plataforma financiera; es un motor para el crecimiento local. Al facilitar el acceso a liquidez en USDT y automatizar los pagos, permitimos a las empresas locales adquirir insumos esenciales de manera más rápida y segura.
-            </p>
-<p class="text-body-md font-body-md text-on-surface-variant mt-2">
-                Nuestra infraestructura tecnológica reduce la fricción en el comercio internacional, fomentando un ecosistema empresarial más robusto y resiliente en la región oriental.
-            </p>
-<button class="bg-secondary text-on-secondary font-label-bold text-label-bold px-8 py-3 rounded-lg hover:bg-[#005a67] transition-all shadow-md self-start mt-4">
-                Conoce Más
-            </button>
-</div>
-<div class="flex-1 w-full bg-surface-container-lowest rounded-2xl shadow-level-2 aspect-video flex items-center justify-center border border-outline-variant/30 overflow-hidden relative">
-<div class="absolute inset-0 bg-gradient-to-tr from-secondary/10 to-primary/10"></div>
-<div class="grid grid-cols-2 gap-4 p-8 relative z-10 w-full h-full">
-<div class="bg-surface-container/80 backdrop-blur rounded-xl p-4 flex flex-col justify-center border border-surface-variant">
-<span class="text-headline-sm font-headline-sm text-secondary mb-1">+45%</span>
-<span class="text-caption font-caption text-on-surface-variant">Eficiencia en Pagos</span>
-</div>
-<div class="bg-surface-container/80 backdrop-blur rounded-xl p-4 flex flex-col justify-center border border-surface-variant">
-<span class="text-headline-sm font-headline-sm text-secondary mb-1">24/7</span>
-<span class="text-caption font-caption text-on-surface-variant">Operatividad</span>
-</div>
-<div class="bg-surface-container/80 backdrop-blur rounded-xl p-4 flex flex-col justify-center border border-surface-variant col-span-2">
-<span class="text-headline-sm font-headline-sm text-secondary mb-1">Desarrollo Local</span>
-<span class="text-caption font-caption text-on-surface-variant">Inversión directa en la economía de Santiago.</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Sección de Preguntas Frecuentes -->
-<section class="w-full bg-surface-container-lowest py-section-padding px-margin-mobile md:px-gutter" id="faq">
-<div class="max-w-3xl mx-auto">
-<h2 class="text-headline-md font-headline-md text-primary text-center mb-stack-lg">Preguntas Frecuentes</h2>
-<div class="flex flex-col gap-4">
-<!-- FAQ Item 1 -->
-<details class="group bg-surface-container-low rounded-lg shadow-sm border border-outline-variant/50 overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
-<summary class="flex justify-between items-center font-label-bold text-label-bold text-on-background cursor-pointer p-6 bg-surface-container-low hover:bg-surface-container transition-colors">
-                    ¿Qué criptomonedas acepta GESFIDI?
-                    <span class="material-symbols-outlined text-secondary transition group-open:rotate-180">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-body-md font-body-md text-on-surface-variant bg-surface-container-low">
-                    Actualmente, GESFIDI procesa pagos exclusivamente en USDT a través de las redes BSC (BEP20) y TRC20, garantizando bajas comisiones y alta velocidad.
+<body class="text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center text-white shadow-lg">
+                        <i class="ph ph-hexagon text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-2xl tracking-tight text-brand-dark">GESFIDI</span>
+                        <p class="text-[0.6rem] uppercase tracking-wider text-slate-500 -mt-1 font-semibold">Santiago de Cuba</p>
+                    </div>
                 </div>
-</details>
-<!-- FAQ Item 2 -->
-<details class="group bg-surface-container-low rounded-lg shadow-sm border border-outline-variant/50 overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
-<summary class="flex justify-between items-center font-label-bold text-label-bold text-on-background cursor-pointer p-6 bg-surface-container-low hover:bg-surface-container transition-colors">
-                    ¿Cuánto tiempo tarda en confirmarse un pago?
-                    <span class="material-symbols-outlined text-secondary transition group-open:rotate-180">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-body-md font-body-md text-on-surface-variant bg-surface-container-low">
-                    Las confirmaciones en la blockchain suelen tomar entre 1 y 3 minutos. Una vez confirmada la red, nuestro sistema liquida los fondos de manera casi instantánea.
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                    <a href="#como-funciona" class="text-slate-600 hover:text-brand-cyan transition-colors">Cómo Funciona</a>
+                    <a href="#garantias" class="text-slate-600 hover:text-brand-cyan transition-colors">Transparencia</a>
+                    <a href="#pago" class="bg-brand-dark text-white px-6 py-2.5 rounded-full hover:bg-brand-blue shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Pago Express</a>
                 </div>
-</details>
-<!-- FAQ Item 3 -->
-<details class="group bg-surface-container-low rounded-lg shadow-sm border border-outline-variant/50 overflow-hidden [&amp;_summary::-webkit-details-marker]:hidden">
-<summary class="flex justify-between items-center font-label-bold text-label-bold text-on-background cursor-pointer p-6 bg-surface-container-low hover:bg-surface-container transition-colors">
-                    ¿Cómo genero mi número de expediente?
-                    <span class="material-symbols-outlined text-secondary transition group-open:rotate-180">expand_more</span>
-</summary>
-<div class="p-6 pt-0 text-body-md font-body-md text-on-surface-variant bg-surface-container-low">
-                    El número de expediente se genera automáticamente cuando inicia una solicitud formal con nuestros agentes de ventas locales, vinculando su contrato físico con la plataforma digital.
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[40rem] h-[40rem] bg-brand-cyan/10 rounded-full blur-3xl opacity-70"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[30rem] h-[30rem] bg-brand-blue/5 rounded-full blur-3xl opacity-70"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left opacity-0 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-cyan/10 border border-brand-cyan/20 text-brand-cyan text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
+                        </span>
+                        Plataforma Territorial PDL
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark mb-6 leading-tight">
+                        La Pasarela de Pagos <br/> para el <span class="gradient-text">Desarrollo Local</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Automatiza y asegura tus liquidaciones de insumos esenciales con tecnología blockchain y USDT. Soluciones directas para las empresas y el ecosistema logístico de Santiago de Cuba.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#pago" class="bg-gradient-to-r from-brand-cyan to-blue-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-cyan-500/30 transition-all flex items-center justify-center gap-2 group">
+                            Iniciar una Orden
+                            <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#como-funciona" class="bg-white text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-xl hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-play-circle text-xl text-brand-cyan"></i>
+                            Ver Proceso
+                        </a>
+                    </div>
                 </div>
-</details>
-</div>
-</div>
-</section>
-<!-- Garantías y Transparencia -->
-<section class="w-full bg-surface-container-lowest py-section-padding px-margin-mobile md:px-gutter" id="transparencia">
-<div class="max-w-container-max mx-auto text-center">
-<p class="text-label-bold font-label-bold text-secondary uppercase tracking-widest mb-2">Garantías y Transparencia</p>
-<h2 class="text-headline-md font-headline-md text-primary mb-stack-lg">Garantía de Confianza y Desarrollo Local</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-md mt-10">
-<!-- Card 1 -->
-<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-8 flex flex-col items-center text-center shadow-level-1 hover:shadow-level-2 transition-shadow duration-300">
-<div class="w-16 h-16 mb-6 text-secondary">
-<span class="material-symbols-outlined text-6xl">gavel</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-3 min-h-[40px] flex items-center justify-center">Sustento Legal<br/>(Decreto-Ley 33/2021)</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Sustento Legal (Decreto Ley 33/2021).</p>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-8 flex flex-col items-center text-center shadow-level-1 hover:shadow-level-2 transition-shadow duration-300">
-<div class="w-16 h-16 mb-6 text-secondary">
-<span class="material-symbols-outlined text-6xl">account_balance</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-3 min-h-[40px] flex items-center justify-center">Operativa 100%<br/>Bancarizada y Trazable</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Operativa transparente y segura.</p>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-8 flex flex-col items-center text-center shadow-level-1 hover:shadow-level-2 transition-shadow duration-300">
-<div class="w-16 h-16 mb-6 text-secondary">
-<span class="material-symbols-outlined text-6xl">public</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-3 min-h-[40px] flex items-center justify-center">Liquidez Internacional<br/>en USDT</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Blockchain y redes internacionales.</p>
-</div>
-<!-- Card 4 -->
-<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-8 flex flex-col items-center text-center shadow-level-1 hover:shadow-level-2 transition-shadow duration-300">
-<div class="w-16 h-16 mb-6 text-secondary">
-<span class="material-symbols-outlined text-6xl">handshake</span>
-</div>
-<h3 class="text-label-bold font-label-bold text-on-background mb-3 min-h-[40px] flex items-center justify-center">Aporte Directo al<br/>Desarrollo Territorial</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Impacto directo en Santiago de Cuba.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-primary dark:bg-on-primary-fixed w-full py-section-padding px-margin-mobile md:px-gutter flat no shadows">
-<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-stack-lg">
-<!-- Brand Column -->
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-2">
-<img alt="GESFIDI Logo" class="h-12 object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfEvStmb2Z_ywQs-IQhKmnT_L4cHANsj4m7LFADE2cysk5nz79Q9YEXTLF0B0KqK4qyAyLaq_EdFGV10FSHde00cvdRVfv5BpSqJAtaSJ-0d-F3-rzjiSxgt1nnzPi5I7DLil28OCeq9Uotzk2f0jdQ043e3R2PFfY6vjV_mFptdJH7MxJ4xf-VX3QZXCZxfQZguIEkWK-0E1d9SP-hTcmjtfS5IufzsWZgqr3YrwpUuebsVqU1DI1i6nwU_fs_xFvIW8"/>
-</div>
-<p class="text-caption font-caption text-on-primary/80">Gestión Financiera Digital<br/>- Santiago de Cuba</p>
-<p class="text-caption font-caption text-on-primary/60 mt-4">© 2024 GESFIDI. Innovación Financiera para el Desarrollo Territorial.</p>
-</div>
-<!-- Links Column 1 -->
-<div class="flex flex-col gap-3">
-<h4 class="text-label-bold font-label-bold text-on-primary mb-2">Servicios</h4>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Sustento Legal</a>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Operativa Bancarizada</a>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Liquidez USDT</a>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Aporte Territorial</a>
-</div>
-<!-- Links Column 2 -->
-<div class="flex flex-col gap-3">
-<h4 class="text-label-bold font-label-bold text-on-primary mb-2">Soporte</h4>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Términos</a>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacidad</a>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Preguntas Frecuentes</a>
-<a class="font-body-md text-body-md text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#contacto">Contacto</a>
-</div>
-<!-- Contact Column -->
-<div class="flex flex-col gap-4">
-<h4 class="text-label-bold font-label-bold text-on-primary mb-2">Contacto</h4>
-<div class="flex items-center gap-2 text-on-primary/80">
-<span class="material-symbols-outlined text-sm">location_on</span>
-<span class="font-body-md text-body-md">Santiago de Cuba, Cuba</span>
-</div>
-<div class="flex items-center gap-2 text-on-primary/80">
-<span class="material-symbols-outlined text-sm">call</span>
-<span class="font-body-md text-body-md">(61) 555-3776</span>
-</div>
-<div class="flex items-center gap-2 text-on-primary/80">
-<span class="material-symbols-outlined text-sm">mail</span>
-<span class="font-body-md text-body-md">info.manx@gesfidi.sc.cu</span>
-</div>
-<div class="flex gap-4 mt-2">
-<a class="text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-</div>
-</div>
-</div>
-</footer>
-</body></html>
+
+                <!-- Hero Graphic (Floating Card) -->
+                <div class="relative hidden lg:block opacity-0 animate-fade-in-up delay-200 animate-float">
+                    <div class="bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 relative z-10">
+                        <div class="flex justify-between items-center mb-8 border-b border-slate-100 pb-4">
+                            <h3 class="font-bold text-lg text-brand-dark">Resumen de Liquidación</h3>
+                            <i class="ph-fill ph-check-circle text-brand-cyan text-2xl"></i>
+                        </div>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-center bg-slate-50 p-4 rounded-xl">
+                                <span class="text-slate-500 text-sm">Expediente</span>
+                                <span class="font-semibold text-brand-dark">GES-2026-001</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-slate-50 p-4 rounded-xl">
+                                <span class="text-slate-500 text-sm">Activo</span>
+                                <div class="flex items-center gap-1 font-semibold text-brand-dark">
+                                    <i class="ph-fill ph-currency-circle-dollar text-green-500"></i> USDT (BEP20)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-slate-500 mb-1">Total a Compensar</p>
+                            <h2 class="text-4xl font-extrabold text-brand-dark mb-4">100.00 <span class="text-xl text-slate-400">USDT</span></h2>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-brand-cyan w-full h-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decor elements -->
+                    <div class="absolute -right-6 -top-6 bg-brand-dark text-white p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-pulse">
+                        <i class="ph-fill ph-arrows-left-right text-brand-cyan text-2xl"></i>
+                        <div>
+                            <p class="text-xs text-slate-400">Estado</p>
+                            <p class="font-bold text-sm">Webhook Activo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Flow -->
+    <section id="como-funciona" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Nuestro Proceso en 4 Pasos</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Un flujo automatizado y transparente, desde la generación de la orden hasta la liquidación de los insumos.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Line connecting steps (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-slate-100 via-brand-cyan/30 to-slate-100 -translate-y-1/2 z-0"></div>
+
+                <div class="grid md:grid-cols-4 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow opacity-0 animate-fade-in-up delay-100">
+                        <div class="w-16 h-16 mx-auto bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm border border-blue-100">
+                            <i class="ph ph-file-text"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-dark mb-2">1. Generar Orden</h4>
+                        <p class="text-sm text-slate-500">Ingresa los datos del expediente y monto en USDT.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow opacity-0 animate-fade-in-up delay-200">
+                        <div class="w-16 h-16 mx-auto bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm border border-indigo-100">
+                            <i class="ph ph-git-branch"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-dark mb-2">2. Proceso n8n</h4>
+                        <p class="text-sm text-slate-500">El sistema crea la solicitud vía API a TronDealer.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow opacity-0 animate-fade-in-up delay-300">
+                        <div class="w-16 h-16 mx-auto bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm border border-cyan-100">
+                            <i class="ph ph-qr-code"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-dark mb-2">3. Pago Cliente</h4>
+                        <p class="text-sm text-slate-500">Transferencia segura en USDT mediante red BEP20.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow opacity-0 animate-fade-in-up delay-[400ms]">
+                        <div class="w-16 h-16 mx-auto bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm border border-green-100">
+                            <i class="ph ph-shield-check"></i>
+                        </div>
+                        <h4 class="font-bold text-brand-dark mb-2">4. Liquidación</h4>
+                        <p class="text-sm text-slate-500">Confirmación automática y acreditación en QvaPay.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Module Section -->
+    <section id="pago" class="py-20 relative overflow-hidden">
+        <!-- Background dark element -->
+        <div class="absolute inset-0 bg-brand-dark skew-y-3 origin-bottom-right scale-110 z-0"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass !bg-white/10 !border-white/10 p-1 rounded-3xl shadow-2xl">
+                <div class="bg-white rounded-[1.35rem] p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <div class="inline-flex items-center justify-center w-12 h-12 bg-brand-cyan/10 text-brand-cyan rounded-full mb-4">
+                            <i class="ph-bold ph-lightning text-2xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-brand-dark mb-3">Módulo de Pago Express</h2>
+                        <p class="text-slate-500">Genera tu orden de pago segura vinculada a TronDealer.</p>
+                    </div>
+
+                    <form id="paymentForm" class="space-y-6 max-w-xl mx-auto">
+                        <div>
+                            <label for="orderId" class="block text-sm font-semibold text-brand-dark mb-2">Número de Expediente / Pedido</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <i class="ph ph-folder text-slate-400 text-lg"></i>
+                                </div>
+                                <input type="text" id="orderId" placeholder="Ej: GES-2026-001" required
+                                    class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-cyan focus:border-brand-cyan transition-colors outline-none text-brand-dark">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="amount" class="block text-sm font-semibold text-brand-dark mb-2">Monto a compensar (USDT)</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <i class="ph ph-currency-dollar text-slate-400 text-lg"></i>
+                                </div>
+                                <input type="number" id="amount" min="1" step="0.01" placeholder="100.00" required
+                                    class="w-full pl-11 pr-16 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-cyan focus:border-brand-cyan transition-colors outline-none text-brand-dark">
+                                <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                    <span class="text-slate-400 font-semibold text-sm">USDT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-brand-dark text-white font-bold py-4 rounded-xl shadow-lg hover:bg-brand-blue hover:shadow-xl transition-all flex items-center justify-center gap-2 group mt-8">
+                            <span>Generar Orden TronDealer</span>
+                            <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+
+                        <!-- Status Alert Box -->
+                        <div id="statusBox" class="hidden mt-6 p-4 rounded-xl border flex items-start gap-3 transition-all duration-300">
+                            <div id="statusIcon" class="mt-0.5"></div>
+                            <div id="statusText" class="text-sm"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Guarantees -->
+    <section id="garantias" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">Garantía de Confianza y Desarrollo</h2>
+                <p class="text-slate-500">Operativa sustentada en la legalidad y la transparencia técnica.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 hover:border-brand-cyan/50 hover:shadow-lg transition-all group">
+                    <i class="ph-fill ph-scales text-4xl text-brand-cyan mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-brand-dark text-lg mb-2">Sustento Legal</h4>
+                    <p class="text-sm text-slate-500">Sustento formal basado en el Decreto-Ley 33/2021.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 hover:border-brand-cyan/50 hover:shadow-lg transition-all group">
+                    <i class="ph-fill ph-bank text-4xl text-brand-blue mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-brand-dark text-lg mb-2">Operativa 100%</h4>
+                    <p class="text-sm text-slate-500">Transacciones bancarizadas y 100% trazables en la red.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 hover:border-brand-cyan/50 hover:shadow-lg transition-all group">
+                    <i class="ph-fill ph-coin text-4xl text-brand-cyan mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-brand-dark text-lg mb-2">Liquidez USDT</h4>
+                    <p class="text-sm text-slate-500">Protección contra volatilidad operando en stablecoins (BEP20).</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 hover:border-brand-cyan/50 hover:shadow-lg transition-all group">
+                    <i class="ph-fill ph-map-pin-line text-4xl text-brand-blue mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-brand-dark text-lg mb-2">Aporte Local</h4>
+                    <p class="text-sm text-slate-500">Aporte directo al desarrollo territorial de Santiago de Cuba.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="ph-fill ph-hexagon text-2xl text-brand-cyan"></i>
+                    <span class="font-bold text-xl text-white tracking-tight">GESFIDI</span>
+                </div>
+                <p class="text-sm text-slate-500 max-w-xs">Plataforma Territorial de Gestión Financiera y Logística Digital. Santiago de Cuba.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#como-funciona" class="hover:text-brand-cyan transition-colors">Cómo Funciona</a></li>
+                    <li><a href="#pago" class="hover:text-brand-cyan transition-colors">Pago Express</a></li>
+                    <li><a href="#" class="hover:text-brand-cyan transition-colors">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contacto Técnico</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center gap-2"><i class="ph-fill ph-envelope-simple text-brand-cyan"></i> soporte@gesfidi.sc.cu</li>
+                    <li class="flex items-center gap-2"><i class="ph-fill ph-map-pin text-brand-cyan"></i> Santiago de Cuba, Cuba</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-center text-sm flex flex-col md:flex-row justify-between items-center">
+            <p>&copy; 2026 GESFIDI. Todos los derechos reservados.</p>
+            <div class="flex gap-4 mt-4 md:mt-0 text-xl">
+                <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-twitter-logo"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="ph-fill ph-github-logo"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Animations on scroll setup
+        document.addEventListener("DOMContentLoaded", () => {
+            const elements = document.querySelectorAll('.opacity-0');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+
+        // Form Logic
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const orderId = document.getElementById('orderId').value;
+            const amount = document.getElementById('amount').value;
+            const statusBox = document.getElementById('statusBox');
+            const statusIcon = document.getElementById('statusIcon');
+            const statusText = document.getElementById('statusText');
+            const btn = document.getElementById('submitBtn');
+
+            // Set Loading state
+            btn.innerHTML = '<i class="ph-bold ph-spinner animate-spin text-xl"></i> Conectando con pasarela...';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            btn.disabled = true;
+
+            statusBox.classList.remove('hidden', 'bg-red-50', 'border-red-200', 'text-red-700', 'bg-green-50', 'border-green-200', 'text-green-700');
+            statusBox.classList.add('bg-blue-50', 'border-blue-200', 'text-blue-800');
+            statusIcon.innerHTML = '<i class="ph-fill ph-info text-blue-500 text-xl"></i>';
+            statusText.innerHTML = `<strong>Procesando Orden...</strong><br>Creando solicitud segura para el expediente <b>${orderId}</b> por <b>${amount} USDT (BEP20)</b>.`;
+
+            // Simulate API Call delay
+            setTimeout(() => {
+                statusBox.classList.remove('bg-blue-50', 'border-blue-200', 'text-blue-800');
+                statusBox.classList.add('bg-green-50', 'border-green-200', 'text-green-700');
+                statusIcon.innerHTML = '<i class="ph-fill ph-check-circle text-green-500 text-xl"></i>';
+                statusText.innerHTML = `<strong>¡Orden Generada Exitosamente!</strong><br>Se ha establecido la conexión segura. En producción, aquí se mostraría el código QR de TronDealer para realizar el pago de ${amount} USDT en la red BSC.`;
+                
+                btn.innerHTML = '<span>Generar Nueva Orden</span><i class="ph-bold ph-arrows-clockwise"></i>';
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+                btn.disabled = false;
+                
+                // Reset form fields
+                document.getElementById('orderId').value = '';
+                document.getElementById('amount').value = '';
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
